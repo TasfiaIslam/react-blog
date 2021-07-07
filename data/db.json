@@ -1,0 +1,23 @@
+{
+    "blogs":[
+
+        {"title": "My trip to Bali", 
+         "body": "Lorem ipsum....", 
+         "author":"Tasfia", 
+         "id":1
+        },
+
+        {"title": "My trip to Bali", 
+         "body": "Lorem ipsum....", 
+         "author":"Mansura", 
+         "id":2
+        },
+
+
+        {"title": "My trip to Bali", 
+         "body": "Lorem ipsum....", 
+         "author":"Nubayra", 
+         "id":3
+        }
+    ]
+}
