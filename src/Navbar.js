@@ -27,7 +27,7 @@ const Navbar = () => {
                         About
                         </Link>
                     </li>
-                    <li class="md:ml-4 md:mx-8">
+                    <li class="md:ml-4 md:ml-4">
                         <Link to="/contact" class="border-t block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
                         Contact
                         </Link>
