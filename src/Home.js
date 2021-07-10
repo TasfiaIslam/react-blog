@@ -5,11 +5,6 @@ const Home = () => {
 
     const {data: blogs, isLoading, error} = useFetch("http://localhost:8000/blogs");
 
-    // const handleDelete = (id) => {
-    //     const newBlogs = blogs.filter(blog => blog.id !== id);
-    //     setBlogs(newBlogs);
-    // }
-
     return ( 
         <div>
             <div className="w-7/12 mx-auto mt-10">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import ImageUpload from 'image-upload-react'
 import 'image-upload-react/dist/index.css'
 
@@ -8,6 +9,7 @@ const AddBlog = () => {
     const [author, setAuthor] = useState('Tasfia');
     const [blogImage, setBlogImage] = useState();
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
  
     const handleImageSelect = (e) => {
         setBlogImage(URL.createObjectURL(e.target.files[0]))
@@ -15,17 +17,18 @@ const AddBlog = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { title, body, author, blogImage };
+        const data = { title, body, author, blogImage };
 
         setIsLoading(true);
 
-        fetch("http://localhost:8000/blogs", {
+        fetch("http://localhost:8000", {
             method: "POST",
             headers: {"Content-type": "application/json"},
-            body: JSON.stringify(blog)
+            body: JSON.stringify(data)
         }).then(() => {
-            console.log("New blog added successfully!");
+            console.log("Data added successfully!");
             setIsLoading(false);
+            history.push("/");
         })
     }
 

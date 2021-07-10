@@ -20,20 +20,6 @@
       "author": "Nubayra",
       "blogImage": "https://cdn.swanseacity.com/sites/default/files/archive/Laudrup%20cup%2016x9.jpg",
       "id": 3
-    },
-    {
-      "title": "Test Blog",
-      "body": "lorem Ipsum",
-      "author": "Tasfia",
-      "imageSrc": "blob:http://localhost:3000/67b1ac09-f641-40f4-affb-0ad8b3555eec",
-      "id": 4
-    },
-    {
-      "title": "Test 2",
-      "body": "lorem ipsum",
-      "author": "Mansura",
-      "blogImage": "blob:http://localhost:3000/731f9cd7-883b-4ddb-a536-e3e18820708c",
-      "id": 5
     }
   ]
 }
