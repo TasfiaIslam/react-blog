@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-const BlogList = ({blogs, handleDelete}) => {
+const BlogList = ({blogs}) => {
     
     return ( 
         <div className="w-7/12 mx-auto mt-10">
+            <div className="grid grid-flow-col  gap-4">
             {blogs.map( blog => (
                 <div className="my-8 hover:shadow-md p-4" key={blog.id}>
                     <div className="flex justify-between">
@@ -13,11 +14,10 @@ const BlogList = ({blogs, handleDelete}) => {
                                 <p className="text-gray-400 text-sm">Written by { blog.author }</p>
                             </Link>
                         </div>
-                       
-                        
                     </div>
                 </div>
             ))}
+            </div>
         </div>
      );
 }
