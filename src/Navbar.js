@@ -7,7 +7,7 @@ const Navbar = () => {
                 <div class="flex items-center justify-between mb-4 md:mb-0">
                     <h1 class="leading-none text-2xl text-grey-darkest">
                     <Link to="/" class="no-underline text-green-400 font-bold hover:text-black">
-                        My Blog
+                        WriteUp
                     </Link>
                     </h1>
 

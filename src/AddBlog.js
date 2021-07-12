@@ -8,6 +8,7 @@ const AddBlog = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Tasfia');
     const [blogImage, setBlogImage] = useState();
+    const [category, setCategory] = useState('Travel');
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
  
@@ -17,7 +18,7 @@ const AddBlog = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { title, body, author, blogImage };
+        const data = { title, body, author, blogImage, category };
 
         setIsLoading(true);
 
@@ -67,6 +68,19 @@ const AddBlog = () => {
                         <option value="Tasfia">Tasfia</option>
                         <option value="Mansura">Mansura</option>
                         <option value="Nubayra">Nubayra</option>
+                    </select>
+                </div>
+                <div className="my-4 w-full md:w-3/5">
+                    <label className="block text-gray-700 text-lg font-bold mb-2">
+                        Category
+                    </label>
+                    <select
+                        value={category}
+                        onChange={ (e) => setCategory(e.target.value)}
+                    >
+                        <option value="travel">Travel</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
                     </select>
                 </div>
                 <div className="my-4 w-full md:w-3/5">
