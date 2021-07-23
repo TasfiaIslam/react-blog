@@ -3,10 +3,17 @@
 
 ### Project Demo
 - Home
-![Home](screenshots/Home.png)
+![Home](screenshots/Home1.png)
 ---
 - Blog detail page
-![Blog Detail](screenshots/Blogdetail.png)
+![Blog Detail](screenshots/BlogDetail1.png)
+
+### Features
+- List all blogs
+- View detail page
+- Love/Unlove blog
+- Search blogs
+- Delete blog
 
 ### Installation and Setup Instructions
 
