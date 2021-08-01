@@ -2,10 +2,15 @@
  A blog website used to add blogs to and show blogs from json server built with React, JavaScript, and Tailwind CSS.
 
 ### Project Demo
-- Home
+
+View live website [WriteUp](http://tasfiaislam.github.io/react-blog)
+
+#####Screenshots 
+
+1. Home
 ![Home](screenshots/Home1.png)
 ---
-- Blog detail page
+2. Blog detail page
 ![Blog Detail](screenshots/BlogDetail1.png)
 
 ### Features
