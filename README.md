@@ -5,8 +5,6 @@
 
 View live website [WriteUp](http://tasfiaislam.github.io/react-blog)
 
-#####Screenshots 
-
 1. Home
 ![Home](screenshots/Home1.png)
 ---
