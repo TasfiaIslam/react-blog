@@ -23,14 +23,6 @@ Installation:
 
 `npm install`  
 
-To Run Test Suite:  
-
-`npm test`  
-
-Start json-server:
-
-`npx json-server --watch data/db.json --port PORT_NUMBER` 
-
 To Start Server:
 
 `npm start`  

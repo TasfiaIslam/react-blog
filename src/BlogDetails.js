@@ -4,13 +4,13 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
     const {id} = useParams();
-    const {data: blog, isLoading, error} = useFetch("http://localhost:8000/blogs/"+id);
+    const {data: blog, isLoading, error} = useFetch("https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/"+id);
     const history = useHistory();
 
     const [liked, setLiked] = useState(false);
 
     const handleDelete = () => {
-        fetch(`http://localhost:8000/blogs/` +blog.id, {
+        fetch(`https://my-json-server.typicode.com/tasfiaislam/blog-json-server//blogs/` +blog.id, {
             method: 'DELETE'
         }).then(()=>{
             history.push("/");
