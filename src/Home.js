@@ -3,8 +3,8 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-
-    const {data: blogs, isLoading, error} = useFetch("https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs");
+    // https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/
+    const {data: blogs, isLoading, error} = useFetch("http://localhost:8000/blogs");
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 

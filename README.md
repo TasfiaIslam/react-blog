@@ -3,10 +3,10 @@
 
 ### Project Demo
 
-View live website [WriteUp](http://tasfiaislam.github.io/react-blog)
+<!-- View live website [WriteUp](http://tasfiaislam.github.io/react-blog) -->
 
 1. Home
-![Home](screenshots/Home1.png)
+![Home](screenshots/Home2.png)
 ---
 2. Blog detail page
 ![Blog Detail](screenshots/BlogDetail1.png)

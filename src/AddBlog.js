@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
-import ImageUpload from 'image-upload-react'
-import 'image-upload-react/dist/index.css'
 
 const AddBlog = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Tasfia');
-    const [blogImage, setBlogImage] = useState();
+    const [blogImage, setBlogImage] = useState(null);
     const [category, setCategory] = useState('Travel');
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
@@ -18,16 +16,16 @@ const AddBlog = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { title, body, author, blogImage, category };
+        const blog = { title, body, author, blogImage, category };
 
         setIsLoading(true);
 
-        fetch("http://localhost:8000", {
+        fetch("http://localhost:8000/blogs", {
             method: "POST",
-            headers: {"Content-type": "application/json"},
-            body: JSON.stringify(data)
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(blog)
         }).then(() => {
-            console.log("Data added successfully!");
+            console.log("Blog added successfully!");
             setIsLoading(false);
             history.push("/");
         })
@@ -36,8 +34,8 @@ const AddBlog = () => {
     return ( 
         <div className="w-7/12 mx-auto mt-10">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-4 flex flex-col justify-center items-center">
-                <h1 className="text-4xl font-semibold">Add Blog</h1>
-                <div className="my-4 w-full md:w-3/5">
+                <h1 className="text-2xl text-gray-700 font-semibold">New Blog</h1>
+                <div className="my-2 w-full md:w-3/5">
                     <label className="block text-gray-700 text-lg font-bold mb-2">
                         Title
                     </label>
@@ -47,7 +45,7 @@ const AddBlog = () => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     />
                 </div>
-                <div className="my-4 w-full md:w-3/5">
+                <div className="my-2 w-full md:w-3/5">
                     <label className="block text-gray-700 text-lg font-bold mb-2">
                         Blog Content
                     </label>
@@ -57,7 +55,7 @@ const AddBlog = () => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
                     />
                 </div>
-                <div className="my-4 w-full md:w-3/5">
+                <div className="my-2 w-full md:w-3/5">
                     <label className="block text-gray-700 text-lg font-bold mb-2">
                         Author
                     </label>
@@ -70,7 +68,7 @@ const AddBlog = () => {
                         <option value="Nubayra">Nubayra</option>
                     </select>
                 </div>
-                <div className="my-4 w-full md:w-3/5">
+                <div className="my-2 w-full md:w-3/5">
                     <label className="block text-gray-700 text-lg font-bold mb-2">
                         Category
                     </label>
@@ -83,30 +81,24 @@ const AddBlog = () => {
                         <option value="technology">Technology</option>
                     </select>
                 </div>
-                <div className="my-4 w-full md:w-3/5">
+                <div className="my-2 w-full md:w-3/5">
                     <label className="block text-gray-700 text-lg font-bold mb-2">
                         Upload Image
                     </label>
-                    <ImageUpload
-                        handleImageSelect={handleImageSelect}
-                        imageSrc={blogImage}
-                        setImageSrc={setBlogImage}
-                        style={{
-                            width: 200,
-                            height: 100,
-                            background: 'gray',
-                            marginTop: '-5px'
-                        }}
+                    <input 
+                        onChange={handleImageSelect}
+                        id="photo" type="file" 
+                        className="w-2/3" 
                     />
                 </div>
                 { !isLoading && 
-                <button className="w-3/5 md:w-1/5 bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <button className="w-3/5 md:w-1/5 bg-green-500 hover:bg-green-700 text-white text-lg font-bold py-1 px-2 rounded-lg focus:outline-none focus:shadow-outline" type="submit">
                     Add
                 </button>}
                 { isLoading && 
-                <button className="w-3/5 md:w-1/5 bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-not-allowed" type="submit">
+                <p className="w-3/5 md:w-1/5">
                     Adding blog...
-                </button>}
+                </p>}
             </form>
         </div>
      );

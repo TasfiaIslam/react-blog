@@ -33,7 +33,9 @@ const BlogList = ({blogs, searchTerm, searchHandler}) => {
                             <div>
                                 <Link to={`/blogs/${blog.id}`}>
                                     <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ blog.title }</h2>
-                                    <p className="text-gray-400 text-sm">Written by { blog.author }</p>
+                                    <p className="pb-2 text-gray-400 text-sm">Written by { blog.author }</p>
+                                    <p className="pb-2 text-gray-600">{ blog.body.slice(0,100) }.....</p>
+                                    <span className="inline-block bg-gray-50 shadow-md rounded-full px-2 md:px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{blog.category}</span>
                                 </Link>
                             </div>
                         </div>

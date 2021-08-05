@@ -18,6 +18,11 @@ const Navbar = () => {
                 <nav>
                     <ul class="list-reset md:flex md:items-center">
                     <li class="md:ml-4 md:mx-8">
+                        <Link to="/blogs/add" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                        New Blog
+                        </Link>
+                    </li>
+                    <li class="md:ml-4 md:mx-8">
                         <Link to="/" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
                         Blogs
                         </Link>
