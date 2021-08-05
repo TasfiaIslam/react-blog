@@ -32,7 +32,7 @@ const AddBlog = () => {
     }
 
     return ( 
-        <div className="w-7/12 mx-auto mt-10">
+        <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-4 flex flex-col justify-center items-center">
                 <h1 className="text-2xl text-gray-700 font-semibold">New Blog</h1>
                 <div className="my-2 w-full md:w-3/5">
@@ -88,11 +88,11 @@ const AddBlog = () => {
                     <input 
                         onChange={handleImageSelect}
                         id="photo" type="file" 
-                        className="w-2/3" 
+                        className="md:w-2/3" 
                     />
                 </div>
                 { !isLoading && 
-                <button className="w-3/5 md:w-1/5 bg-green-500 hover:bg-green-700 text-white text-lg font-bold py-1 px-2 rounded-lg focus:outline-none focus:shadow-outline" type="submit">
+                <button className="mt-4 w-3/5 md:w-1/5 bg-green-500 hover:bg-green-700 text-white text-lg font-bold py-1 px-2 rounded-lg focus:outline-none focus:shadow-outline" type="submit">
                     Add
                 </button>}
                 { isLoading && 

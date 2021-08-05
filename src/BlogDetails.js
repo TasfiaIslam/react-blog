@@ -30,7 +30,7 @@ const BlogDetails = () => {
     }
 
     return ( 
-        <div className="w-7/12 mx-auto mt-10">
+        <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}.</div>}
             {blog && (
@@ -38,7 +38,7 @@ const BlogDetails = () => {
                     <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ blog.title }</h2>
                     <p className="text-gray-400 text-sm mb-6">Written by { blog.author }</p>
                     <div>
-                        <img className="w-full object-cover h-80 mb-6" src={ blog.blogImage }/>
+                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={ blog.blogImage }/>
                         <p className="text-gray-600 text-md text-justify">{ blog.body }</p>
                     </div>
                     <div className="my-4 flex space-x-4">

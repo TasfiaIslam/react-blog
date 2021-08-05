@@ -10,9 +10,9 @@ const BlogList = ({blogs, searchTerm, searchHandler}) => {
     }
     
     return ( 
-        <div className="w-7/12 mx-auto mt-10">
+        <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
             {/* Search Bar */}
-            <div class="w-1/3 shadow flex">
+            <div class="mb-4 md:mb-0 md:w-1/3 shadow flex">
                 <input class="w-full rounded p-2 outline-none" type="text" placeholder="Search..."
                         value={searchTerm} onChange={getSearchTerm} ref={inputEl}
                      />
@@ -22,12 +22,12 @@ const BlogList = ({blogs, searchTerm, searchHandler}) => {
                     </svg>
                 </button>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
             {blogs.map( blog => (
-                <div className="my-8 hover:shadow-md" key={blog.id}>
+                <div className="mt-4 md:my-8 hover:shadow-md" key={blog.id}>
                     <div className="flex flex-col">
                         <div>
-                            <img src={blog.blogImage} className="object-cover h-32 w-full"/>
+                            <img src={blog.blogImage} className="object-cover h-40 md:h-32 w-full"/>
                         </div>
                         <div className="p-4 flex justify-between">
                             <div>

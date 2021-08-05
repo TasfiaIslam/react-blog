@@ -15,7 +15,7 @@ const Navbar = () => {
                     <i class="fa fa-2x fa-bars"></i>
                     </a>
                 </div>
-                <nav>
+                <nav className="">
                     <ul class="list-reset md:flex md:items-center">
                     <li class="md:ml-4 md:mx-8">
                         <Link to="/blogs/add" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
