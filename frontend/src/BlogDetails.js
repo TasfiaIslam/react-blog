@@ -3,14 +3,17 @@ import { useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
+    
     const {id} = useParams();
-    const {data: blog, isLoading, error} = useFetch("https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/"+id);
+    const {data: blog, isLoading, error} = useFetch("http://localhost:1337/blogs/"+id);
+    const imgUrl = "http://localhost:1337";
+
     const history = useHistory();
 
     const [liked, setLiked] = useState(false);
 
     const handleDelete = () => {
-        fetch(`https://my-json-server.typicode.com/tasfiaislam/blog-json-server//blogs/` +blog.id, {
+        fetch(`http://localhost:1337/blogs/` +blog.id, {
             method: 'DELETE'
         }).then(()=>{
             history.push("/");
@@ -38,7 +41,7 @@ const BlogDetails = () => {
                     <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ blog.title }</h2>
                     <p className="text-gray-400 text-sm mb-6">Written by { blog.author }</p>
                     <div>
-                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={ blog.blogImage }/>
+                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={imgUrl+blog.blogImage.url}/>
                         <p className="text-gray-600 text-md text-justify">{ blog.body }</p>
                     </div>
                     <div className="my-4 flex space-x-4">

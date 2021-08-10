@@ -17,7 +17,7 @@ const Navbar = () => {
                     
                     <div class="flex items-center justify-between mb-4 md:mb-0">
                         <h1 class="leading-none text-2xl text-grey-darkest">
-                            <Link to="/" class="no-underline text-green-400 font-bold hover:text-black">
+                            <Link to="/react-blog" class="no-underline text-green-400 font-bold hover:text-black">
                                 WriteUp
                             </Link>
                         </h1>
@@ -37,7 +37,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li class="md:ml-4 md:mx-8">
-                            <Link to="/" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                            <Link to="/react-blog" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
                             Blogs
                             </Link>
                         </li>

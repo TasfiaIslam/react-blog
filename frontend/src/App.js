@@ -3,6 +3,7 @@ import Home from './Home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import BlogDetails from './BlogDetails';
 import AddBlog from './AddBlog';
+import BlogList from './BlogList';
 
 function App() {
 

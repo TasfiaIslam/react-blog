@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const Home = () => {
     // https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/
-    const {data: blogs, isLoading, error} = useFetch("http://localhost:8000/blogs");
+    const {data: blogs, isLoading, error} = useFetch("http://localhost:1337/blogs");
     
     const [searchTerm, setSearchTerm] = useState('');
     const [searchCategory, setSearchCategory] = useState("None");

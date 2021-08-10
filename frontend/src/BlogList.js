@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHandler}) => {
-
+    const imgUrl = "http://localhost:1337";
     
     const inputEl = useRef("");
     const selectEl = useRef("");
@@ -49,7 +49,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                 <div className="mt-4 md:my-8 hover:shadow-md" key={blog.id}>
                     <div className="flex flex-col">
                         <div>
-                            <img src={blog.blogImage} className="object-cover h-40 md:h-32 w-full"/>
+                            <img src={imgUrl + blog.blogImage.url} className="object-cover h-40 md:h-32 w-full"/>
                         </div>
                         <div className="p-4 flex justify-between">
                             <div>
