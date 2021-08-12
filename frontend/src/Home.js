@@ -18,17 +18,16 @@ const BLOGS = gql`
     }
 `
 
+
 const Home = () => {
-    // https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/
+
     const {isLoading, error, data} = useQuery(BLOGS)
-  
-    
+
     const [searchTerm, setSearchTerm] = useState('');
     const [searchCategory, setSearchCategory] = useState("None");
     const [searchResults, setSearchResults] = useState([]);
-
     const [searchArray, setSearchArray] = useState([]);
-
+    
 
     const categoryHandler = (searchCategory) => {
 
@@ -63,21 +62,25 @@ const Home = () => {
             setSearchResults(data.blogs);
         }
     }
-
+    if(error) return<div>{error}</div>
+    if(isLoading) return<div>Loading...</div>
+    if(data){
     return ( 
         <div>
-            {/* {console.log(data.blogs)} */}
+            
             <div className="w-4/5 md:w-7/12 mx-auto mt-10">
-                {error && <div>{error}</div>}
-                {isLoading && <div>Loading...</div>}
+                
             </div>
+           
             <BlogList 
                 blogs={(searchTerm.length < 1 && searchCategory === "None") ? data.blogs : searchResults } 
                 searchTerm={searchTerm} searchCategory={searchCategory} searchHandler={searchHandler}
                 categoryHandler={categoryHandler}
             />
+            
         </div>
      );
+    }return(<div>No blog found</div>)
 }
  
 export default Home;
