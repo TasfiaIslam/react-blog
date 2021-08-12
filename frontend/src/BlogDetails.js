@@ -1,11 +1,29 @@
 import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { useQuery, gql } from "@apollo/client";
 import useFetch from "./useFetch";
+
+const BLOG = gql`
+    query GetBlog($id: ID!){
+        blog(id: $id) {
+            id
+            title
+            body
+            author
+            category
+            blogImage{
+              url
+            }
+          }
+    }
+`
 
 const BlogDetails = () => {
     
     const {id} = useParams();
-    const {data: blog, isLoading, error} = useFetch("http://localhost:1337/blogs/"+id);
+    const {isLoading, error, data} = useQuery(BLOG, {
+        variables: {id: id}
+    })
     const imgUrl = "http://localhost:1337";
 
     const history = useHistory();
@@ -13,7 +31,7 @@ const BlogDetails = () => {
     const [liked, setLiked] = useState(false);
 
     const handleDelete = () => {
-        fetch(`http://localhost:1337/blogs/` +blog.id, {
+        fetch(`http://localhost:1337/blogs/` +data.blog.id, {
             method: 'DELETE'
         }).then(()=>{
             history.push("/");
@@ -36,13 +54,14 @@ const BlogDetails = () => {
         <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}.</div>}
-            {blog && (
+            {/* {console.log(data.blog)} */}
+            {data.blog && (
                 <div>
-                    <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ blog.title }</h2>
-                    <p className="text-gray-400 text-sm mb-6">Written by { blog.author }</p>
+                    <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ data.blog.title }</h2>
+                    <p className="text-gray-400 text-sm mb-6">Written by { data.blog.author }</p>
                     <div>
-                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={imgUrl+blog.blogImage.url}/>
-                        <p className="text-gray-600 text-md text-justify">{ blog.body }</p>
+                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={imgUrl+data.blog.blogImage.url}/>
+                        <p className="text-gray-600 text-md text-justify">{ data.blog.body }</p>
                     </div>
                     <div className="my-4 flex space-x-4">
                         <div className="text-red-500 hover:text-black" onClick={handleDelete}>

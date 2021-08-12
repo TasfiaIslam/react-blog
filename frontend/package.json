@@ -4,10 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.7",
     "@craco/craco": "^6.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "graphql": "^15.5.1",
     "image-upload-react": "^1.4.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +20,7 @@
   "scripts": {
     "start": "craco start",
     "start-server": "npx json-server --watch data/db.json --port=3001",
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "craco test",

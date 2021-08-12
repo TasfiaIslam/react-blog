@@ -1,10 +1,27 @@
 import { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
 import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+
+
+const BLOGS = gql`
+    query GetBlogs{
+        blogs {
+            id
+            title
+            body
+            author
+            category
+            blogImage{
+              url
+            }
+          }
+    }
+`
 
 const Home = () => {
     // https://my-json-server.typicode.com/tasfiaislam/blog-json-server/blogs/
-    const {data: blogs, isLoading, error} = useFetch("http://localhost:1337/blogs");
+    const {isLoading, error, data} = useQuery(BLOGS)
+  
     
     const [searchTerm, setSearchTerm] = useState('');
     const [searchCategory, setSearchCategory] = useState("None");
@@ -18,14 +35,14 @@ const Home = () => {
         setSearchCategory(searchCategory);
 
         if(searchCategory !== "None"){
-            const newBlogList = blogs.filter( (blog) => (
+            const newBlogList = data.blogs.filter( (blog) => (
                 blog.category.toLowerCase() === searchCategory.toLowerCase()
              ));
              setSearchArray(newBlogList);
              setSearchResults(newBlogList);
         }else{
-            setSearchArray(blogs);
-            setSearchResults(blogs);
+            setSearchArray(data.blogs);
+            setSearchResults(data.blogs);
         }       
     }
 
@@ -43,18 +60,19 @@ const Home = () => {
             setSearchResults(newBlogList);
         }
         else{
-            setSearchResults(blogs);
+            setSearchResults(data.blogs);
         }
     }
 
     return ( 
         <div>
+            {/* {console.log(data.blogs)} */}
             <div className="w-4/5 md:w-7/12 mx-auto mt-10">
                 {error && <div>{error}</div>}
                 {isLoading && <div>Loading...</div>}
             </div>
             <BlogList 
-                blogs={(searchTerm.length < 1 && searchCategory === "None") ? blogs : searchResults } 
+                blogs={(searchTerm.length < 1 && searchCategory === "None") ? data.blogs : searchResults } 
                 searchTerm={searchTerm} searchCategory={searchCategory} searchHandler={searchHandler}
                 categoryHandler={categoryHandler}
             />
