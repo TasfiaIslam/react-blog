@@ -62,7 +62,7 @@ const Home = () => {
             setSearchResults(data.blogs);
         }
     }
-    if(error) return<div>{error}</div>
+    if(error) return<div>{console.log(error)}</div>
     if(isLoading) return<div>Loading...</div>
     if(data){
     return ( 

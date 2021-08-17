@@ -6,7 +6,7 @@
 <!-- View live website [WriteUp](http://tasfiaislam.github.io/react-blog) -->
 
 1. Home
-![Home](screenshots/Home2.png)
+![Home](screenshots/Home.png)
 ---
 2. Blog detail page
 ![Blog Detail](screenshots/BlogDetail1.png)
