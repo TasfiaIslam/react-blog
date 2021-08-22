@@ -6,9 +6,8 @@ module.exports = {
       colors: {
         // 'primary': '#0E4763',
         'primary': '#0D0F0E',
-        'primary-dark': '#C06582',
         'primary-light': '#FBF5F7',
-        'secondary': '#D9E7E2',
+        'secondary': '#106976',
       },
       fontFamily: {
         'allison': ['"Allison"', 'cursive']

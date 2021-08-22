@@ -4,7 +4,7 @@
 
 @layer base {
     .nav-link{
-        @apply block font-semibold py-2 text-base 2xl:text-lg text-gray-400 hover:text-gray-200 md:border-none md:p-0;
+        @apply block font-semibold py-2 text-base 2xl:text-lg text-gray-700 hover:text-gray-400 md:border-none md:p-0;
     }
     .text-title{
         @apply text-primary hover:text-gray-600 text-base 2xl:text-lg font-bold;

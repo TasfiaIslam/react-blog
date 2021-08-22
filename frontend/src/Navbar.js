@@ -11,13 +11,13 @@ const Navbar = () => {
     }
 
     return ( 
-        <header class="md:flex md:items-center md:justify-between py-4 pb-0 shadow-md md:pb-4 bg-primary">
+        <header class="md:flex md:items-center md:justify-between py-4 pb-0 md:pb-4">
             <div className="w-4/5 md:w-9/12 mx-auto md:flex md:items-center md:justify-between">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between md:justify-center">
                     
-                    <div class="flex items-center justify-between mb-4 md:mb-0">
+                    <div class="flex items-center justify-between mb-4 md:mb-0 md:hidden">
                         <h1 class="leading-none text-2xl">
-                            <Link to="/react-blog" class="text-4xl 2xl:text-8xl no-underline text-white font-allison font-bold hover:text-primary-light">
+                            <Link to="/react-blog" class="text-4xl 2xl:text-8xl no-underline font-allison text-secondary">
                                 WriteUp
                             </Link>
                         </h1>
@@ -41,6 +41,13 @@ const Navbar = () => {
                             Blogs
                             </Link>
                         </li>
+                        <div class="items-center justify-between mb-4 md:mb-0 md:mx-8 hidden md:inline">
+                            <h1 class="leading-none text-2xl">
+                                <Link to="/react-blog" class="text-4xl 2xl:text-8xl no-underline font-allison text-secondary">
+                                    WriteUp
+                                </Link>
+                            </h1>
+                        </div>
                         <li className="md:ml-4 md:mx-8">
                             <Link to="/about" className="nav-link">
                             About

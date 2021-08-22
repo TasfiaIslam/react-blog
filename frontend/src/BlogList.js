@@ -19,7 +19,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
         <div className="w-4/5 md:w-9/12 mx-auto md:mt-10">
             {/* Search Bar */}
             <div className="flex justify-between">
-                <div className="mb-4 md:mb-0 md:w-1/3 shadow flex">
+                <div className="mb-4 md:mb-0 w-2/3 md:w-1/3 shadow flex">
                     <input className="w-full rounded p-2 outline-none" type="text" placeholder="Search..."
                             value={searchTerm} onChange={getSearchItems} ref={inputEl}
                         />
