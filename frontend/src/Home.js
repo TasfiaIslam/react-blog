@@ -68,7 +68,7 @@ const Home = () => {
     return ( 
         <div>
             
-            <div className="w-4/5 md:w-7/12 mx-auto mt-10">
+            <div className="w-4/5 md:w-9/12 mx-auto mt-10">
                 
             </div>
            

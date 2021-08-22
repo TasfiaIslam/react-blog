@@ -16,7 +16,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
     }
     
     return ( 
-        <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
+        <div className="w-4/5 md:w-9/12 mx-auto md:mt-10">
             {/* Search Bar */}
             <div className="flex justify-between">
                 <div className="mb-4 md:mb-0 md:w-1/3 shadow flex">
@@ -44,28 +44,34 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                     </select>
                 </div>
             </div>
-            <div className="grid md:grid-cols-3 gap-4">
-            {blogs.map( blog => (
-                <div className="mt-4 md:my-8 hover:shadow-md" key={blog.id}>
-                    <div className="flex flex-col">
-                        <div>
-                            <img src={imgUrl + blog.blogImage.url} className="object-cover h-40 md:h-32 w-full"/>
-                        </div>
-                        <div className="p-4 flex justify-between">
+            {/* <div className="flex"> */}
+                <div className="grid md:grid-cols-3 gap-4">
+                {/* <div className="flex"> */}
+                {blogs.map( blog => (
+                    <div className="mt-4 md:my-4 border border-gray-200 shadow-md rounded-md" key={blog.id}>
+                        <div className="flex flex-col">
                             <div>
-                                <Link to={`/blogs/${blog.id}`}>
-                                    <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ blog.title }</h2>
-                                    <p className="pb-2 text-gray-400 text-sm">Written by { blog.author }</p>
-                                    <p className="pb-2 text-gray-600">{ blog.body.slice(0,100) }.....</p>
-                                    <span className="inline-block bg-gray-50 shadow-md rounded-full px-2 md:px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{blog.category}</span>
-                                </Link>
+                                <img src={imgUrl + blog.blogImage.url} className="object-fit h-64 md:h-52 w-full"/>
+                            </div>
+                            <div className="p-4 flex justify-between">
+                                <div>
+                                    <Link to={`/blogs/${blog.id}`}>
+                                        <h2 className="py-2 text-title">{ blog.title }</h2>
+                                        <p className="pb-2 text-sub-title">Written by { blog.author }</p>
+                                        <p className="pb-2 text-content">{ blog.body.slice(0,100) }<span className="text-primary">Read More.....</span></p>
+                                        <span className="inline-block bg-gray-50 shadow-md rounded-full px-2 md:px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{blog.category}</span>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+                ))}
                 </div>
-            ))}
-            </div>
+                {/* <div className="w-1/3">
+                    Categories
+                </div>
+            </div> */}
+            
         </div>
      );
 }

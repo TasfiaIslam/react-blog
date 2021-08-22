@@ -11,13 +11,13 @@ const Navbar = () => {
     }
 
     return ( 
-        <header class="md:flex md:items-center md:justify-between py-4 pb-0 shadow-md md:pb-4">
-            <div className="w-4/5 md:w-7/12 mx-auto md:flex md:items-center md:justify-between">
+        <header class="md:flex md:items-center md:justify-between py-4 pb-0 shadow-md md:pb-4 bg-primary">
+            <div className="w-4/5 md:w-9/12 mx-auto md:flex md:items-center md:justify-between">
                 <div className="flex items-center justify-between">
                     
                     <div class="flex items-center justify-between mb-4 md:mb-0">
-                        <h1 class="leading-none text-2xl text-grey-darkest">
-                            <Link to="/react-blog" class="no-underline text-green-400 font-bold hover:text-black">
+                        <h1 class="leading-none text-2xl">
+                            <Link to="/react-blog" class="text-4xl 2xl:text-8xl no-underline text-white font-allison font-bold hover:text-primary-light">
                                 WriteUp
                             </Link>
                         </h1>
@@ -30,24 +30,24 @@ const Navbar = () => {
                     </nav>
                 </div>
                 <nav className={`md:block ${isHidden ? "hidden" : "block"} `}>
-                    <ul class="list-reset md:flex md:items-center">
-                        <li class="md:ml-4 md:mx-8">
-                            <Link to="/blogs/add" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                    <ul className="list-reset md:flex md:items-center">
+                        <li className="md:ml-4 md:mx-8">
+                            <Link to="/blogs/add" className="nav-link">
                             New Blog
                             </Link>
                         </li>
-                        <li class="md:ml-4 md:mx-8">
-                            <Link to="/react-blog" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                        <li className="md:ml-4 md:mx-8">
+                            <Link to="/react-blog" className="nav-link">
                             Blogs
                             </Link>
                         </li>
-                        <li class="md:ml-4 md:mx-8">
-                            <Link to="/about" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                        <li className="md:ml-4 md:mx-8">
+                            <Link to="/about" className="nav-link">
                             About
                             </Link>
                         </li>
-                        <li class="md:ml-4 md:ml-4">
-                            <Link to="/contact" class="block no-underline hover:underline font-semibold py-2 text-gray-400 hover:text-black md:border-none md:p-0">
+                        <li className="md:ml-4">
+                            <Link to="/contact" className="nav-link">
                             Contact
                             </Link>
                         </li>

@@ -32,7 +32,7 @@ const AddBlog = () => {
     }
 
     return ( 
-        <div className="w-4/5 md:w-7/12 mx-auto md:mt-10">
+        <div className="w-4/5 md:w-9/12 mx-auto md:mt-10">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-4 flex flex-col justify-center items-center">
                 <h1 className="text-2xl text-gray-700 font-semibold">New Blog</h1>
                 <div className="my-2 w-full md:w-3/5">
