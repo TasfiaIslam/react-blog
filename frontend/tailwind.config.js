@@ -4,10 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // 'primary': '#0E4763',
-        'primary': '#0D0F0E',
-        'primary-light': '#FBF5F7',
-        'secondary': '#106976',
+        'primary': '#106976',
+        'primary-light': '#57969F',
+        'secondary': '#0D0F0E',
       },
       fontFamily: {
         'allison': ['"Allison"', 'cursive']

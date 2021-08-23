@@ -8,8 +8,8 @@
 1. Home
 ![Home](screenshots/Home.png)
 ---
-2. Blog detail page
-![Blog Detail](screenshots/BlogDetail1.png)
+1. Blog detail page
+![Blog Detail](screenshots/Detail.png)
 
 ### Features
 - List all blogs

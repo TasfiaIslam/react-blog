@@ -34,7 +34,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                     <select
                         value={searchCategory} ref={selectEl}
                         onChange={getSelectItems}
-                        className="w-6/7 h-10 border-none outline-none shadow-md bg-white"
+                        className="w-6/7 h-10 border-none outline-none shadow-md bg-white text-sub-title"
                     >
                         <option value="None">Category</option>
                         <option value="Technology">Technology</option>
@@ -44,25 +44,23 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                     </select>
                 </div>
             </div>
-            {/* <div className="flex"> */}
                 <div className="grid md:grid-cols-3 gap-4">
-                {/* <div className="flex"> */}
                 {blogs.map( blog => (
                     <div className="mt-4 md:my-4 border border-gray-200 shadow-md rounded-md" key={blog.id}>
                         <div className="flex flex-col">
+                            <Link to={`/blogs/${blog.id}`}>
                             <div>
                                 <img src={imgUrl + blog.blogImage.url} className="object-fit h-64 md:h-52 w-full"/>
                             </div>
                             <div className="p-4 flex justify-between">
                                 <div>
-                                    <Link to={`/blogs/${blog.id}`}>
-                                        <h2 className="py-2 text-title">{ blog.title }</h2>
-                                        <p className="pb-2 text-sub-title">Written by { blog.author }</p>
-                                        <p className="pb-2 text-content">{ blog.body.slice(0,100) }<span className="text-primary">Read More.....</span></p>
-                                        <span className="inline-block bg-gray-50 shadow-md rounded-full px-2 md:px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{blog.category}</span>
-                                    </Link>
+                                    <h2 className="py-2 text-title">{ blog.title }</h2>
+                                    <p className="pb-2 text-sub-title">Written by { blog.author }</p>
+                                    <p className="pb-2 text-content">{ blog.body.slice(0,100) }<span className="text-primary">Read More.....</span></p>
+                                    <span className="inline-block bg-gray-50 shadow-md rounded-full px-2 md:px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{blog.category}</span> 
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     </div>
                 ))}

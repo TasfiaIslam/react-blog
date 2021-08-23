@@ -55,13 +55,13 @@ const BlogDetails = () => {
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}.</div>}
             {/* {console.log(data.blog)} */}
-            {data.blog && (
+            {data && (
                 <div>
-                    <h2 className="py-2 text-xl text-green-400 font-bold hover:text-black">{ data.blog.title }</h2>
-                    <p className="text-gray-400 text-sm mb-6">Written by { data.blog.author }</p>
+                    <h2 className="py-2 blog-detail-title">{ data.blog.title }</h2>
+                    <p className="text-sub-title mb-6">Written by { data.blog.author }</p>
                     <div>
-                        <img className="w-full object-cover h-40 md:h-80 mb-6" src={imgUrl+data.blog.blogImage.url}/>
-                        <p className="text-gray-600 text-md text-justify">{ data.blog.body }</p>
+                        <img className="w-full object-cover h-40 md:h-4/5 mb-6 rounded" src={imgUrl+data.blog.blogImage.url}/>
+                        <p className="text-content text-justify">{ data.blog.body }</p>
                     </div>
                     <div className="my-4 flex space-x-4">
                         <div className="text-red-500 hover:text-black" onClick={handleDelete}>
