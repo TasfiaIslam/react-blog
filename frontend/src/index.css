@@ -6,6 +6,9 @@
     .nav-link{
         @apply block font-semibold py-2 text-base 2xl:text-lg text-gray-700 hover:text-gray-400 md:border-none md:p-0;
     }
+    .blog-div{
+        @apply animate-fade-in-down mt-4 md:my-4 border border-gray-200 shadow-md rounded-md;
+    }
     .text-title{
         @apply text-secondary hover:text-primary text-base 2xl:text-lg font-bold;
     }
