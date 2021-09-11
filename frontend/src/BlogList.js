@@ -18,7 +18,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
     return ( 
         <div className="w-4/5 md:w-9/12 mx-auto md:mt-10">
             {/* Search Bar */}
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-10">
                 <div className="mb-4 md:mb-0 w-2/3 md:w-1/3 shadow flex">
                     <input className="w-full rounded p-2 outline-none" type="text" placeholder="Search..."
                             value={searchTerm} onChange={getSearchItems} ref={inputEl}
@@ -44,9 +44,9 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                     </select>
                 </div>
             </div>
-                <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
                 {blogs.map( blog => (
-                    <div className="mt-4 md:my-4 border border-gray-200 shadow-md rounded-md" key={blog.id}>
+                    <div className="blog-div" key={blog.id}>
                         <div className="flex flex-col">
                             <Link to={`/blogs/${blog.id}`}>
                             <div>
@@ -64,11 +64,7 @@ const BlogList = ({blogs, searchTerm, searchCategory, searchHandler, categoryHan
                         </div>
                     </div>
                 ))}
-                </div>
-                {/* <div className="w-1/3">
-                    Categories
-                </div>
-            </div> */}
+            </div>
             
         </div>
      );
